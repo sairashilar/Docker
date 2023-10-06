@@ -1,0 +1,11 @@
+---
+- name: Clone GitHub Repository
+  hosts: localhost
+  gather_facts: yes
+  tasks:
+    - name: Clone GitHub Repository
+      git:
+        repo: https://github.com/sairashilar/Docker.git
+        dest: /home/ubuntu/abc
+      register: git_clone_result
+
