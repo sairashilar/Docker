@@ -1,0 +1,14 @@
+---
+- name: Push Docker Image to Registry
+  hosts: localhost
+  tasks:
+    - name: Log in to Docker Registry
+      docker_login:
+        registry: docker.io
+        username: shilar
+        password: Sandss@243
+    - name: Push Docker Image
+      docker_image:
+        name: docker.io/shilar/image1:v1
+        push: yes
+        source: local
